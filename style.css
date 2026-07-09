@@ -1,0 +1,186 @@
+/* Google Font */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#0f172a,#1e293b,#334155);
+    padding:20px;
+}
+
+.container{
+    width:100%;
+    max-width:480px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:20px;
+    padding:30px;
+    text-align:center;
+    color:white;
+    box-shadow:0 20px 45px rgba(0,0,0,.4);
+}
+
+h1{
+    font-size:2.3rem;
+    font-weight:700;
+}
+
+.subtitle{
+    margin-top:6px;
+    color:#cbd5e1;
+    margin-bottom:25px;
+}
+
+.scoreboard{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+    margin-bottom:25px;
+}
+
+.score{
+    flex:1;
+    background:rgba(255,255,255,.06);
+    padding:15px;
+    border-radius:15px;
+}
+
+.score h2{
+    font-size:1rem;
+    color:#38bdf8;
+}
+
+.score p{
+    margin-top:8px;
+    font-size:1.5rem;
+    font-weight:600;
+}
+
+#status{
+    margin-bottom:20px;
+    font-size:1.1rem;
+    font-weight:600;
+}
+
+.board{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+}
+
+.cell{
+    aspect-ratio:1;
+    border:none;
+    border-radius:18px;
+    font-size:2.8rem;
+    font-weight:700;
+    cursor:pointer;
+    color:white;
+    background:rgba(255,255,255,.08);
+    transition:.25s;
+}
+
+.cell:hover{
+    background:rgba(255,255,255,.18);
+    transform:scale(1.05);
+}
+
+.cell:disabled{
+    cursor:not-allowed;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-top:25px;
+}
+
+button{
+    transition:.25s;
+}
+
+#restart,
+#newGame{
+    padding:12px 22px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:600;
+    color:white;
+}
+
+#restart{
+    background:#2563eb;
+}
+
+#restart:hover{
+    background:#1d4ed8;
+}
+
+#newGame{
+    background:#10b981;
+}
+
+#newGame:hover{
+    background:#059669;
+}
+
+/* Winner Highlight */
+
+.win{
+    background:#22c55e !important;
+    animation:pulse .8s infinite;
+}
+
+@keyframes pulse{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.08);
+}
+
+100%{
+transform:scale(1);
+}
+
+}
+
+/* Responsive */
+
+@media(max-width:500px){
+
+.container{
+padding:20px;
+}
+
+h1{
+font-size:2rem;
+}
+
+.cell{
+font-size:2.3rem;
+}
+
+.buttons{
+flex-direction:column;
+}
+
+#restart,
+#newGame{
+width:100%;
+}
+
+}
